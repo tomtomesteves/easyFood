@@ -2,7 +2,7 @@
 Um aplicativo para compra e busca de comida.
 
 Grupo: 
-* Rafael Massoni Gonsalves Barbosa
+* Rafael Massoni Gonçalves Barbosa
 * Marco Antônio Silveiro Souza Alves
 * Thomas Esteves
 
