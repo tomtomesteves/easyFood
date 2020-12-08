@@ -2,9 +2,11 @@
 Um aplicativo para compra e busca de comida.
 
 Grupo: 
-* Rafael Massoni Gonçalves Barbosa
+* Gustavo Barros Borba Perdigão
 * Marco Antônio Silveiro Souza Alves
+* Rafael Massoni Gonçalves Barbosa
 * Thomas Esteves
+
 
 
 O cliente realiza um pedido ao restaurante, o restaurante inicia o preparo e, quando pronto, o restaurante notifica o cliente para que ele vá buscar sua comida.
