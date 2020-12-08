@@ -1,5 +1,5 @@
 # easyFastFood
-Um aplicativo para compra e busca de comida.
+Um site para compra e busca de comida.
 
 Grupo: 
 * Gustavo Barros Borba Perdigão
