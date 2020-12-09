@@ -1,4 +1,4 @@
-# easyFastFood
+# easyFood
 Um site para compra e busca de comida.
 
 Grupo: 
