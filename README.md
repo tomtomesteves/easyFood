@@ -21,3 +21,6 @@ Tecnologias:
 * Front-end: HTML, CSS, JS
 * Back-end: Python e Go
 * Database: PostgreSQL ou MariaDB
+
+Sprint 1:
+https://github.com/easyfastfood/easyFood/projects/1
