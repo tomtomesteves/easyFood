@@ -25,6 +25,8 @@ github.com/hashicorp/golang-lru
 github.com/hashicorp/golang-lru/simplelru
 # github.com/mitchellh/mapstructure v0.0.0-20180203102830-a4e142e9c047
 github.com/mitchellh/mapstructure
+# github.com/uudashr/gopkgs/v2 v2.1.2
+## explicit
 # github.com/vektah/gqlparser/v2 v2.1.0
 ## explicit
 github.com/vektah/gqlparser/v2
@@ -34,5 +36,9 @@ github.com/vektah/gqlparser/v2/lexer
 github.com/vektah/gqlparser/v2/parser
 github.com/vektah/gqlparser/v2/validator
 github.com/vektah/gqlparser/v2/validator/rules
+# golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
+## explicit
+golang.org/x/crypto/bcrypt
+golang.org/x/crypto/blowfish
 # google.golang.org/appengine v1.6.7
 ## explicit
