@@ -37,6 +37,11 @@ input createUserInput {
 	senha: String!
 }
 
+input authInput {
+	email: String!
+	password: String!  
+}
+
 type Query {
 	user(id: Int!): User!
 	restaurant(category: [String!]!): [Restaurant!]
@@ -44,6 +49,7 @@ type Query {
 
 type Mutation {
 	createUser(input: createUserInput!): User!
+	auth(input: authInput!): String!
 }
 
 enum Weekdays {

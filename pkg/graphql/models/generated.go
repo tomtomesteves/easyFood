@@ -38,6 +38,11 @@ type User struct {
 	Email       string `json:"email"`
 }
 
+type AuthInput struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
 type CreateUserInput struct {
 	FirstName   string `json:"firstName"`
 	LastName    string `json:"lastName"`
