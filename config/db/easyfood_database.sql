@@ -32,9 +32,9 @@ INSERT INTO `categorias` (`id`) VALUES
 -- Dumping structure for table easyfood.restaurantes
 CREATE TABLE IF NOT EXISTS `restaurantes` (
   `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
-  `id_categoria` INT(11) unsigned NOT NULL,
-  `id_horario_abertura` INT(11) unsigned NOT NULL,
-  `id_horario_fechamento` INT(11) unsigned NOT NULL,
+  `id_categoria` INT(11) unsigned,
+  `id_horario_abertura` INT(11) unsigned,
+  `id_horario_fechamento` INT(11) unsigned,
   `id_cidade` INT(11) NOT NULL,
   `dias_funcionamento` TINYINT(3) unsigned NOT NULL COMMENT "Representacao binaria : 1 = segunda , 2 = terca, 4 = quarta etc",
   `nome` varchar(32) NOT NULL,
@@ -45,9 +45,9 @@ CREATE TABLE IF NOT EXISTS `restaurantes` (
   KEY `id_categoria` (`id_categoria`),
   KEY `id_horario_abertura` (`id_horario_abertura`),
   KEY `id_horario_fechamento` (`id_horario_fechamento`),
-  CONSTRAINT `restaurante_categoria_fk` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE SET 0 ON UPDATE CASCADE,
-  CONSTRAINT `restaurante_horario_abertura_fk` FOREIGN KEY (`id_horario_abertura`) REFERENCES `dim_horas` (`id`) ON DELETE SET 0 ON UPDATE CASCADE,
-  CONSTRAINT `restaurante_horario_fechamento_fk` FOREIGN KEY (`id_horario_fechamento`) REFERENCES `dim_horas` (`id`) ON DELETE SET 0 ON UPDATE CASCADE
+  CONSTRAINT `restaurante_categoria_fk` FOREIGN KEY (`id_categoria`) REFERENCES `categorias` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `restaurante_horario_abertura_fk` FOREIGN KEY (`id_horario_abertura`) REFERENCES `dim_horas` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  CONSTRAINT `restaurante_horario_fechamento_fk` FOREIGN KEY (`id_horario_fechamento`) REFERENCES `dim_horas` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 
 INSERT INTO `restaurantes` (`id_categoria` ,`id_horario_abertura` ,`id_horario_fechamento` ,`dias_funcionamento` ,`id_cidade` ,`nome` ,`descricao` ,`telefone` ,`endereco`) VALUES
@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `dim_cidade` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8;
 									    
-LOAD DATA INFILE 'easyfood/cidades.csv'
+LOAD DATA INFILE 'easyfood/cidades/cidades.csv'
 	INTO TABLE `dim_cidade`
 	FIELDS TERMINATED BY ','
 	LINES TERMINATED BY '\n'
