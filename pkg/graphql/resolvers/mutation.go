@@ -19,10 +19,12 @@ func (m mutationResolver) CreateUser(ctx context.Context, input models.CreateUse
 
 func (m mutationResolver) Auth(ctx context.Context, input models.AuthInput) (string, error) {
 	// buscar no banco email e senha, filtrar por email
-	err := bcrypt.CompareHashAndPassword([]byte(input.Password), []byte(input.Password))
+	senhaTeste := "123456"
+	hash, err := bcrypt.GenerateFromPassword([]byte(senhaTeste), 0)
+	err = bcrypt.CompareHashAndPassword(hash, []byte(input.Password))
 	if err != nil {
 		return "", err
 	}
-	hash, err := bcrypt.GenerateFromPassword([]byte(input.Email), 0)
+	hash, err = bcrypt.GenerateFromPassword([]byte(input.Email), 0)
 	return string(hash), err
 }
