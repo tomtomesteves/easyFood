@@ -16,8 +16,12 @@ func NewQueryResolver(services services.All) gqlgen.QueryResolver {
 	return queryResolver{services: services}
 }
 
-func (q queryResolver) Category(ctx context.Context, id int) (*models.Category, error) {
-	category := models.NewCategory()
+func (q queryResolver) Category(ctx context.Context, id *int) ([]*models.Category, error) {
+	categoryEntity, err := q.services.Category.Get(ctx,id)
+	if err != nil {
+		return nil, err
+	}
+	category := models.NewCategory(categoryEntity...)
 	return category, nil
 }
 
