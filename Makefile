@@ -10,3 +10,7 @@ gqlgen: ## Gera os arquivos para a API GraphQL
 
 run: 
 	go generate ./cmd/http/http.go
+
+frontend:
+	yarn --cwd services/frontend/ install
+	yarn --cwd services/frontend/ start
