@@ -6,8 +6,9 @@ const Restaurants = ({ loading, error, data }) => {
   return (
     <ul>
       {data.restaurant.map(restaurant => (
-        <li onClick={ () => {window.location = "restaurant/"+restaurant.id}}>{restaurant.name}</li>
-      ))}
+        <li onClick={ () => {window.location.pathname == "/restaurant/" ?  window.location =  restaurant.id : window.location = "restaurant/"+restaurant.id}
+        }>{restaurant.name}</li>
+      ))} 
     </ul>
   );
 };

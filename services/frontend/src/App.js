@@ -25,12 +25,6 @@ const RestaurantPage = ({match}) => {
   )
 }
 
-function RestaurantByCategory() {
-  return (
-    <h1>TESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTETESTE</h1>
-  );
-}
-
 
 
 function Restaurants() {
@@ -44,20 +38,10 @@ function Restaurants() {
 }
 
 
-// function App() {
-//   var teste = true;
-//   if (teste) {
-//     return <Restaurants onClick={teste = false} />;
-//   }
-//   return <restaurantByCategory />;
-// }
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);
   }
-
 
   render() {
     let button;

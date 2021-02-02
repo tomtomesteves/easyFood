@@ -17,6 +17,7 @@ const GetAllRestaurants = () => {
     <>
       {" "}
       <Restaurants error={error} loading={loading} data={data} />
+      <Link to="/">Home</Link>
     </>
   );
 };
