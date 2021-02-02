@@ -603,6 +603,7 @@ input createRestaurantInput {
 	description: String
 	phoneNumber: String!
 	address: String!
+	owner: Int!
 }
 
 input updateCategoryInput {
@@ -3518,6 +3519,14 @@ func (ec *executionContext) unmarshalInputcreateRestaurantInput(ctx context.Cont
 
 			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("address"))
 			it.Address, err = ec.unmarshalNString2string(ctx, v)
+			if err != nil {
+				return it, err
+			}
+		case "owner":
+			var err error
+
+			ctx := graphql.WithPathContext(ctx, graphql.NewPathWithField("owner"))
+			it.Owner, err = ec.unmarshalNInt2int(ctx, v)
 			if err != nil {
 				return it, err
 			}
