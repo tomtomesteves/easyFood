@@ -14,6 +14,7 @@ type CategoryService interface {
 	GetByDish(ctx context.Context, dishId int) (*entity.Category, error)
 	GetByRestaurant(ctx context.Context, restaurantId int) ([]*entity.Category, error)
 	Create(ctx context.Context, category *entity.Category) error
+	Update(ctx context.Context, category *entity.Category) error
 }
 
 type categoryService struct {
@@ -88,5 +89,16 @@ func (c categoryService) Create(ctx context.Context, category *entity.Category) 
 
 	id, _ := result.LastInsertId()
 	category.Id = int(id)
+	return nil
+}
+
+func (c categoryService) Update(ctx context.Context, category *entity.Category) error {
+	query := `UPDATE categorias SET nome = :nome WHERE id = :id`
+
+	_, err := c.db.NamedExecContext(ctx, query, category)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }

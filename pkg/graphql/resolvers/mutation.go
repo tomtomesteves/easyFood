@@ -117,3 +117,15 @@ func (m mutationResolver) CreateRestaurant(ctx context.Context, input models.Cre
 
 	return models.NewRestaurant(&restaurant)[0], nil
 }
+
+func (m mutationResolver) UpdateCategory(ctx context.Context, input models.UpdateCategoryInput) (bool, error) {
+	category := entity.Category{
+		Id: input.ID,
+		Name: input.Name,
+	}
+	err := m.services.Category.Update(ctx, &category)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
+}

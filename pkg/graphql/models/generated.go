@@ -81,6 +81,11 @@ type CreateUserInput struct {
 	Senha       string `json:"senha"`
 }
 
+type UpdateCategoryInput struct {
+	ID   int    `json:"id"`
+	Name string `json:"name"`
+}
+
 type Weekdays string
 
 const (
