@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Fragment} from 'react';
 import "./App.css";
 import { ApolloProvider, useMutation } from "@apollo/react-hooks";
 import { client } from "./apollo-client";
@@ -21,6 +21,8 @@ import {
 import { useState, useEffect } from "react";
 import NavBar from './NavBar'
 
+
+import Login from "./login";
 
 const CategoryPage = ({match}) => {
     const {
@@ -185,30 +187,32 @@ class App extends React.Component {
 
   render() {
     let button;
+    if (window.location.pathname === "/"){
+      return (
+        <dic>
+          <Route exact path="/" component={Login} />
+        </dic>
+      )
+    }
+    
     button = (
-      <div>
         <div>
-          <NavBar />
+          <div>
+            <NavBar />
+          </div>
+          <Route exact path="/restaurant" component={Restaurants} />
+          <Route path="/restaurant/:restaurantId" component={RestaurantPage} />
+
+          <Route exact path="/category" component={Categories} />
+
+          <Route path="/category/:categoryId" component={CategoryPage} />
+
+          <Route exact path="/dish" component={Dishes} />
+
+          <Route path="/dish/:dishId" component={DishPage} />
+
+          <Route exact path="/home" component={HomePage} />
         </div>
-        <Route exact path="/restaurant" component={Restaurants}>
-          <Restaurants />
-        </Route>
-        <Route path="/restaurant/:restaurantId" component={RestaurantPage} />
-
-        <Route exact path="/category" component={Categories}>
-          <Categories />
-        </Route>
-        <Route path="/category/:categoryId" component={CategoryPage} />
-
-        <Route exact path="/dish" component={Dishes}>
-          <Dishes />
-        </Route>
-        <Route path="/dish/:dishId" component={DishPage} />
-
-        <Route exact path="/" component={HomePage}>
-          <HomePage />
-        </Route>
-      </div>
     );
 
     return (
