@@ -13,6 +13,8 @@ import {
     GetCategoryByID
 } from "./gqlComponents/category/CategoryContainer";
 import { useState, useEffect } from "react";
+import NavBar from './NavBar'
+
 
 const CategoryPage = ({match}) => {
     const {
@@ -91,6 +93,9 @@ class App extends React.Component {
     let button;
     button = (
       <div>
+        <div>
+          <NavBar />
+        </div>
         <Route exact path="/restaurant" component={Restaurants}>
           <Restaurants />
         </Route>

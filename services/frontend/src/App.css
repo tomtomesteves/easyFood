@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+teste a  {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: azure;
+  text-decoration: none;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
