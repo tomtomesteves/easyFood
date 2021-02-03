@@ -25,9 +25,18 @@ teste a  {
   text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none;
+    text-align: center;
+    color:rgb(147, 217, 229);
+    display: block;
+    text-size-adjust: 150%;
+  }
+
+body {
+  line-height: 1.7em;
+  color: #7f8c8d;
+  font-size: 13px;
 }
 
 h1,
@@ -124,18 +133,6 @@ label {
       border: none;
   }
 
-}
-
-/*
-* -- DESKTOP (AND UP) MEDIA QUERIES --
-* On desktops and other large devices, we want to over-ride some
-* of the mobile and tablet styles.
-*/
-@media (min-width: 78em) {
-  /* We increase the header font size even more */
-  .splash-head {
-      font-size: 300%;
-  }
 }
 
 /*
